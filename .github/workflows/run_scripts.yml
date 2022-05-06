@@ -16,7 +16,7 @@ jobs:
 #     - uses: actions/checkout@v2
     
       - name: check local dir
-      - uses: ./
+        uses: ./
     
       - name: list dir
         run : ls -la

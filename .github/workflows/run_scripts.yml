@@ -1,10 +1,6 @@
 name: Python application
 
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
   workflow_dispatch:
     branches: [ main ]
     
@@ -13,6 +9,8 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    container:
+      image: joeapo108/stan:v1.0
 
     steps:
     - uses: actions/checkout@v2

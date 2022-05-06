@@ -15,7 +15,9 @@ jobs:
     steps:
 #     - uses: actions/checkout@v2
     - name: run script
-      run : ./run.py
+      run : |
+        ls -la
+        pwd
 #       uses: actions/setup-python@v2
 #       with:
 #         python-version: 3.9

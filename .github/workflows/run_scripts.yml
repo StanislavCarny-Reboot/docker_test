@@ -10,12 +10,12 @@ jobs:
 
     runs-on: ubuntu-latest
     container:
-      image: joeapo108/stan:v1.0
+      image: joeapo108/stan:v2.0
 
     steps:
 #     - uses: actions/checkout@v2
     - name: run script
-      run : python run.py
+      run : ./run.py
 #       uses: actions/setup-python@v2
 #       with:
 #         python-version: 3.9

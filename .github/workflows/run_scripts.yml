@@ -14,8 +14,16 @@ jobs:
 
     steps:
 #     - uses: actions/checkout@v2
-    - name: run script
-      run : run.py
+    
+      - name: check local dir
+      - uses: ./
+    
+      - name: list dir
+        run : ls -la
+        
+      - name: run script
+        run : run.py
+
 #       uses: actions/setup-python@v2
 #       with:
 #         python-version: 3.9

@@ -6,7 +6,7 @@ on:
     
 
 env:
-  IMAGE_TAG: <username>/helloworld:latest
+  IMAGE_TAG: stano_test/helloworld:latest
 
 jobs:
   build:

@@ -50,7 +50,6 @@ jobs:
 
       # Log in to Docker Hub and push the image
       - name: run with docker
-        run: |
-          echo "it is done"
+        run: docker run
          
          

@@ -50,6 +50,6 @@ jobs:
 
       # Log in to Docker Hub and push the image
       - name: run with docker
-        run: docker run
+        run: docker run stano_test/helloworld:latest
          
          

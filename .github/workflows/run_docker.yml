@@ -10,12 +10,6 @@ jobs:
     name: Docker push
     runs-on: ubuntu-latest
 
-    # Build needs to finish first
-    needs: build
-
-    # Only push images from the main branch
-    if: github.ref == 'refs/heads/main'
-
     steps:
       # Load and un-archive the Docker image
       - name: Download Docker image

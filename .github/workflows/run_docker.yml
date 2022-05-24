@@ -1,0 +1,30 @@
+name: Python application
+
+on:
+  workflow_dispatch:
+    branches: [ main ]
+    
+
+          
+  push:
+    name: Docker push
+    runs-on: ubuntu-latest
+
+    # Build needs to finish first
+    needs: build
+
+    # Only push images from the main branch
+    if: github.ref == 'refs/heads/main'
+
+    steps:
+      # Load and un-archive the Docker image
+      - name: Download Docker image
+        uses: actions/download-artifact@v2
+        with:
+          name: docker-image
+      - name: Load Docker image
+        run: docker load --input image.tar
+
+      # Log in to Docker Hub and push the image
+      - name: run with docker
+        run: docker run stano_test/helloworld:latest

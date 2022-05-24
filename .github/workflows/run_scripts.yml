@@ -39,7 +39,7 @@ jobs:
     runs-on: ubuntu-latest
 
     # Build needs to finish first
-    needs: build
+    # needs: build
 
     # Only push images from the main branch
     if: github.ref == 'refs/heads/main'

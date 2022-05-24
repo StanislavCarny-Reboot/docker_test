@@ -3,13 +3,18 @@ name: Build Docker
 on:
   workflow_dispatch:
     branches: [ main ]
-    
+    inputs:
+       build_question:
+        description: 'build: y/n'
+        required: true
+        default: "n"
 
 env:
   IMAGE_TAG: stano_test/helloworld:latest
 
 jobs:
   build:
+    if: ${{ github.event.inputs.build_question }}=='y'
     name: Docker build
     runs-on: ubuntu-latest
     steps:
